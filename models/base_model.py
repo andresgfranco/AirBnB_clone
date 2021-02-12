@@ -9,8 +9,8 @@ class BaseModel:
     def __init__(self):
         """ Initial state of an object """
         self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        self.created_at = datetime.now().isoformat()
+        self.updated_at = datetime.now().isoformat()
 
     def __str__(self):
         """ String representation of object """
@@ -19,8 +19,10 @@ class BaseModel:
 
     def save(self):
         """ Saves """
-        self.updated_t = datetime.now()
+        self.updated_at = datetime.now().isoformat()
 
     def to_dict(self):
         """ Returns a dictionary containing key/values of an instance """
-        return self.__dict__
+        new_dict = self.__dict__.copy()
+        new_dict['__class__'] = self.__class__.__name__
+        return new_dict
