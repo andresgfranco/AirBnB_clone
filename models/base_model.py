@@ -28,8 +28,8 @@ class BaseModel:
 
     def to_dict(self):
         """ Returns a dictionary containing key/values of an instance """
-        self.updated_at = str(self.updated_at.isoformat())
-        self.created_at = str(self.created_at.isoformat())
+        self.updated_at = self.updated_at.isoformat()
+        self.created_at = self.created_at.isoformat()
         new_dict = self.__dict__.copy()
         new_dict['__class__'] = self.__class__.__name__
         return new_dict
