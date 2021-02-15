@@ -9,10 +9,14 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """ Initial state of an object """
         if kwargs:
-            if "created_at" in kwargs:
-                self.created_at = kwargs["created_at"]
-            if "id" in kwargs:
-                self.id = kwargs["id"]
+            for key, value in kwargs.items():
+                if key == "__class__":
+                    pass
+                elif key == "created_at" or key == "updated_at":
+                    setattr(self, key,
+                            datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                else:
+                    setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
