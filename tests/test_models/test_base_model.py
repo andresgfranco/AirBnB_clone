@@ -3,7 +3,7 @@
 import unittest
 
 
-class Test Base(unittest.TestCase):
+class TestBase(unittest.TestCase):
     """ Unit test class for Base Model class """
 
 if __name__ == '__main__':
