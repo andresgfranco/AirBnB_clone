@@ -17,5 +17,9 @@ class HBNBCommand(cmd.Cmd):
         """quit command to exit the cmd"""
         return True
 
+    def emptyline(self):
+        """ Prints new line when press enter """
+        pass
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
