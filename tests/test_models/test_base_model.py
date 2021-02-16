@@ -5,4 +5,3 @@ import unittest
 
 class TestBaseModel(unittest.TestCase):
     """ Unit test class for Base Model class """
-
