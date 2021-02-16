@@ -28,6 +28,7 @@ class BaseModel():
         """ String representation of object """
         return "[{}] ({}) {}".format(self.__class__.__name__, self.id,
                                      self.__dict__)
+
     def save(self):
         """ Saves the objects """
         self.updated_at = datetime.now()
