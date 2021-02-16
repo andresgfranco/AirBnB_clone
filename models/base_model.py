@@ -6,7 +6,8 @@ from datetime import datetime
 
 
 class BaseModel():
-    """ base class """
+    """ Base class model that will define all common
+    attributes/methods for other classes"""
     def __init__(self, *args, **kwargs):
         """ Initial state of an object """
         if kwargs:
