@@ -15,7 +15,7 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """Class HBNBCommand
     for command interpreter"""
-    __classes = { 
+    __classes = {
             "BaseModel": BaseModel,
             "User": User,
             "State": State,
@@ -128,7 +128,6 @@ class HBNBCommand(cmd.Cmd):
                 existing_instances[instance_id].save()
             else:
                 print("** no instance found **")
-
 
     def __class_id_checker(self, line_args, len_args):
         """ Checks if class name and id exist """
