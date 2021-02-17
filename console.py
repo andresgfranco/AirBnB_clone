@@ -58,7 +58,6 @@ class HBNBCommand(cmd.Cmd):
         args_list = args.split()
 
         if self.__class_id_checker(args_list, len(args_list)) != 1:
-            print(args_list)
             instance_id = args_list[0] + "." + args_list[1]
             existing_instances = models.storage.all()
 
@@ -106,9 +105,9 @@ class HBNBCommand(cmd.Cmd):
 
         if self.__class_id_checker(args_list, len(args_list)) == 1:
             pass
-        elif len(args) == 2:
+        elif len(args_list) == 2:
             print("** attribute name missing **")
-        elif len(args) == 3:
+        elif len(args_list) == 3:
             print("** value missing **")
         else:
             inst_id = args_list[0] + "." + args_list[1]
