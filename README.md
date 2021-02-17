@@ -1,7 +1,7 @@
 # 0x00. AirBnB clone - The console
 ---
 ![first](https://camo.githubusercontent.com/59589bd21e8ec09ef94f2d9bb80d36d144bc487fe4737f8b213d005f3273921b/68747470733a2f2f696d6775722e636f6d2f4f696c457358562e706e67)
-
+ 
 ## Description
 This project was created for learning purposes at Holberton School.
 Hoblerton AirBnB clone is a full web application; this repo only includes the back-end *console of the app
