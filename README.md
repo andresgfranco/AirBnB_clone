@@ -6,8 +6,8 @@
 This project was created for learning purposes at Holberton School.
 Hoblerton AirBnB clone is a full web application; this repo only includes the back-end *console of the app
 #### *The Console:
-The first piece is to manipulate a powerful storage system. This storage engine will give us an abstraction between “My object” and “How they are stored and persisted”. 
-![second](https://lucid.app/documents/view/28441055-2428-4ac3-a6e1-a45476f7c618)
+The first piece is to manipulate a powerful storage system. This storage engine will give us an abstraction between “My object” and “How they are stored and persisted”.
+![second](https://scontent.fctg1-2.fna.fbcdn.net/v/t1.0-9/151880839_2920562224888119_911837572075069119_o.jpg?_nc_cat=106&ccb=3&_nc_sid=730e14&_nc_ohc=13gKv4FhRqIAX94webt&_nc_ht=scontent.fctg1-2.fna&oh=2e3b461d379ae148d2888bc274d1b4e7&oe=605219EF)
 
 ---
 ### Resources
