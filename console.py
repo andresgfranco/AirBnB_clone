@@ -44,6 +44,7 @@ class HBNBCommand(cmd.Cmd):
         args = args.split()
         if not args[0]:
             print("** class name missing **")
+            return False
         elif args[0] not in self.__classes:
             print("** class doesn't exist **")
         else:
