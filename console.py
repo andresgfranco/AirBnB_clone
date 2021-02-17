@@ -103,7 +103,7 @@ class HBNBCommand(cmd.Cmd):
         (save the change into the JSON file)"""
         args = args.split()
 
-        if self.__class_id_checker(args, len(args)) != 1:
+        if self.__class_id_checker(args, len(args)) == 1:
             pass
         elif len(args) == 2:
             print("** attribute name missing **")
