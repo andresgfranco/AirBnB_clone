@@ -57,8 +57,8 @@ class HBNBCommand(cmd.Cmd):
         based on the class name and id"""
         args_list = args.split()
 
-        if self.__class_id_checker(args_list, len(args)) != 1:
-
+        if self.__class_id_checker(args_list, len(args_list)) != 1:
+            print(args_list)
             instance_id = args_list[0] + "." + args_list[1]
             existing_instances = models.storage.all()
 
@@ -71,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
         """ Deletes an instance based on the class name and id """
         args_list = args.split()
 
-        if self.__class_id_checker(args_list, len(args)) != 1:
+        if self.__class_id_checker(args_list, len(args_list)) != 1:
 
             instance_id = args_list[0] + "." + args_list[1]
             existing_instances = models.storage.all()
@@ -104,7 +104,7 @@ class HBNBCommand(cmd.Cmd):
         (save the change into the JSON file)"""
         args_list = args.split()
 
-        if self.__class_id_checker(args_list, len(args)) == 1:
+        if self.__class_id_checker(args_list, len(args_list)) == 1:
             pass
         elif len(args) == 2:
             print("** attribute name missing **")
