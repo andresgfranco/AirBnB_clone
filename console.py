@@ -48,8 +48,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             new_instance = self.__classes[args_list[0]]()
-            new_instance.save()
             print(new_instance.id)
+            new_instance.save()
 
     def do_show(self, args):
         """ Prints the string representation of an instance
