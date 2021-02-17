@@ -118,3 +118,18 @@ Update ```FileStorage``` to manage correctly serialization and deserialization o
 Update your command interpreter (```console.py```) to allow ```show```, ```create```, ```destroy```, ```update``` and ```all``` used with ```User```.
 
 ##### 9. More classes!
+Write all those classes that inherit from ```BaseModel```:
+| Class | Public class attributes |
+|-------|-------------------------|
+| ```State``` (```models/state.py```) | ```name``` |
+| ```City``` (```models/city.py```) | ```state_id```, ```name``` |
+| ```Amenity``` (```models/amenity.py```) | ```name``` |
+| ```Place``` (```models/place.py```) | ```city_id```, ```user_id```, ```name```, ```description```, ```number_rooms```, ```number_bathrooms```, ```max_guest```, ```price_by_night```, ```latitude```, ```longitude```, ```amenity_ids``` |
+| ```Review``` (```models/review.py```) | ```place_id```, ```user_id```, ```text``` |
+
+##### 10. Console 1.0 
+Update ```FileStorage``` to manage correctly serialization and deserialization of all our new classes: ```Place```, ```State```, ```City```, ```Amenity``` and ```Review```
+Update your command interpreter (```console.py```) to allow those actions: ```show```, ```create```, ```destroy```, ```update``` and ```all``` with all
+classes created previously.
+
+_*Enjoy your first console!*_
