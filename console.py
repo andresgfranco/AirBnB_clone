@@ -68,11 +68,11 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, args):
         """ Deletes an instance based on the class name and id """
-        args = args.split()
+        args_list = args.split()
 
-        if self.__class_id_checker(args, len(args)) != 1:
+        if self.__class_id_checker(args_list, len(args)) != 1:
 
-            instance_id = args[0] + "." + args[1]
+            instance_id = args_list[0] + "." + args_list[1]
             existing_instances = models.storage.all()
 
             if instance_id in existing_instances.keys():
@@ -84,8 +84,8 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, args):
         """ Prints all string representation of all instances
         based or not on the class name """
-        arg_list = args.split()
-        if args == "" or arg_list[0] in self.__classes:
+        args_list = args.split()
+        if args == "" or args_list[0] in self.__classes:
             instances_id = models.storage.all()
             list_classes = []
 
@@ -101,30 +101,30 @@ class HBNBCommand(cmd.Cmd):
         """ Updates an instance based on the class name
         and id by adding or updating attribute
         (save the change into the JSON file)"""
-        args = args.split()
+        args_list = args.split()
 
-        if self.__class_id_checker(args, len(args)) == 1:
+        if self.__class_id_checker(args_list, len(args)) == 1:
             pass
-        elif len(args) == 2:
+        elif len(args_list) == 2:
             print("** attribute name missing **")
-        elif len(args) == 3:
+        elif len(args_list) == 3:
             print("** value missing **")
         else:
-            instance_id = args[0] + "." + args[1]
-            existing_instances = models.storage.all()
+            inst_id = args_list[0] + "." + args_list[1]
+            dict_instances = models.storage.all()
 
-            if instance_id in existing_instances.keys():
-                if args[3]:
-                    args[3] = args[3].replace('"', "")
+            if inst_id in dict_instances.keys():
+                if args_list[3]:
+                    args_list[3] = args_list[3].replace('"', "")
                 try:
-                    args[3] = int(args[3])
+                    args_list[3] = int(args_list[3])
                 except ValueError:
                     try:
-                        args[3] = float(args[3])
+                        args_list[3] = float(args_list[3])
                     except ValueError:
-                        args[3] = args[3]
-                existing_instances[instance_id].__dict__[args[2]] = args[3]
-                existing_instances[instance_id].save()
+                        args_list[3] = args_list[3]
+                dict_instances[inst_id].__dict__[args_list[2]] = args_list[3]
+                dict_instances[inst_id].save()
             else:
                 print("** no instance found **")
 
