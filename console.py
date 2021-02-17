@@ -116,7 +116,6 @@ class HBNBCommand(cmd.Cmd):
             if instance_id in existing_instances.keys():
                 if args[3]:
                     args[3] = args[3].replace('"', "")
-                    print(args[3])
                 try:
                     args[3] = int(args[3])
                 except ValueError:
