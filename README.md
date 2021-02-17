@@ -153,7 +153,7 @@ _*Enjoy your first console!*_
 [GitHub]: <https://github.com/AdrianVides56>
 [Twitter]: <https://twitter.com/termi56661>
 [Adrian Vides]: <https://www.linkedin.com/in/adrian-felipe-vides-jimenez-a201401b7> 
-[GitHub.]: <https://www.linkedin.com/in/andresgfranco>
+[GitHub.]: <https://github.com/andresgfranco>
 [Twitter.]: <https://twitter.com/andresgfranco>
-[Andrés Gonzalez]: <https://github.com/andresgfranco>
+[Andrés Gonzalez]: <https://www.linkedin.com/in/andresgfranco>
 
