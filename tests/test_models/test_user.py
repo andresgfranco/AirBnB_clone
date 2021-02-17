@@ -47,3 +47,9 @@ class TestUser(unittest.TestCase):
         self.assertTrue(hasattr(new, "created_at"))
         self.assertTrue(hasattr(new, "updated_at"))
         self.assertTrue(hasattr(new, "__class__"))
+
+    def test_str_format(self):
+        """ Test if the strting representation is correct """
+        my_obj = User()
+        str_format = "[User] ({}) {}".format(my_obj.id, my_obj.__dict__)
+        self.assertEqual(str_format, str(my_obj))

@@ -80,7 +80,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(mdict['number'], 89)
         self.assertEqual(mdict['__class__'], "BaseModel")
 
-    def test_str(self):
+    def test_str_format(self):
         """ Test the string representation is correct """
         my_obj = BaseModel()
         str_format = "[BaseModel] ({}) {}".format(my_obj.id, my_obj.__dict__)
