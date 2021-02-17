@@ -54,9 +54,9 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, args):
         """ Prints the string representation of an instance
         based on the class name and id"""
-        args = args.split()
+        args_list = args.split()
 
-        if self.__class_id_checker(args, len(args)) != 1:
+        if self.__class_id_checker(args_list, len(args)) != 1:
 
             instance_id = args[0] + "." + args[1]
             existing_instances = models.storage.all()
@@ -105,9 +105,9 @@ class HBNBCommand(cmd.Cmd):
 
         if self.__class_id_checker(args_list, len(args)) == 1:
             pass
-        elif len(args_list) == 2:
+        elif len(len(args)) == 2:
             print("** attribute name missing **")
-        elif len(args_list) == 3:
+        elif len(len(args)) == 3:
             print("** value missing **")
         else:
             inst_id = args_list[0] + "." + args_list[1]
