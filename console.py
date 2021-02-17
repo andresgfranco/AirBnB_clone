@@ -47,9 +47,9 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in self.__classes:
             print("** class doesn't exist **")
         else:
-            new_model = BaseModel()
-            new_model.save()
-            print(new_model.id)
+            new_instance = self.__classes[args[0]]()
+            new_instance.save()
+            print(new_instance.id)
 
     def do_show(self, args):
         """ Prints the string representation of an instance
@@ -84,13 +84,13 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, args):
         """ Prints all string representation of all instances
         based or not on the class name """
-        args = args.split()
-        if args[0] == "" or args[0] in self.__classes:
+        arg_list = args.split()
+        if args == "" or arg_list[0] in self.__classes:
             instances_id = models.storage.all()
             list_classes = []
 
             for key, value in instances_id.items():
-                if args[0] in key:
+                if args in key:
                     list_classes.append(value.__str__())
 
             print(list_classes)
