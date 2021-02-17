@@ -133,3 +133,27 @@ Update your command interpreter (```console.py```) to allow those actions: ```sh
 classes created previously.
 
 _*Enjoy your first console!*_
+
+---
+
+## Authors
+- [Adrian Vides] | [Twitter] | [GitHub]
+- [Andrés Gonzalez] | [Twitter.] | [GitHub.]
+
+
+
+[HBNB_Project_overview]: <https://youtu.be/E12Xc3H2xqo>
+[Unittest]: <https://docs.python.org/3.4/library/unittest.html#module-unittest>
+[cmd_module]: <https://docs.python.org/3.4/library/cmd.html>
+[AirBnB_Website]: <https://intranet.hbtn.io/rltoken/FrRTcvuF5L9wWDzFE9k01A>
+[JSON]: <https://docs.python.org/3.4/library/json.html>
+
+---
+
+[GitHub]: <https://github.com/AdrianVides56>
+[Twitter]: <https://twitter.com/termi56661>
+[Adrian Vides]: <https://www.linkedin.com/in/adrian-felipe-vides-jimenez-a201401b7> 
+[GitHub.]: <https://www.linkedin.com/in/andresgfranco>
+[Twitter.]: <https://twitter.com/andresgfranco>
+[Andrés Gonzalez]: <https://github.com/andresgfranco>
+
