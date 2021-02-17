@@ -10,8 +10,8 @@ The first piece is to manipulate a powerful storage system. This storage engine 
 ![second](https://scontent.fctg1-2.fna.fbcdn.net/v/t1.0-9/151880839_2920562224888119_911837572075069119_o.jpg?_nc_cat=106&ccb=3&_nc_sid=730e14&_nc_ohc=13gKv4FhRqIAX94webt&_nc_ht=scontent.fctg1-2.fna&oh=2e3b461d379ae148d2888bc274d1b4e7&oe=605219EF)
 
 ---
-### Resources
-###### Read or watch:
+### Resources :book:
+#### Read or watch:
 - [HBNB_Project_overview]
 - [Unittest]
 - [cmd_module]
