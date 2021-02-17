@@ -42,6 +42,7 @@ class HBNBCommand(cmd.Cmd):
         """ Creates a new instance of BaseModel, saves it
         (to the JSON file) and prints the id """
         args_list = args.split()
+
         if args == "":
             print("** class name missing **")
         elif args_list[0] not in self.__classes:
@@ -58,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
 
         if self.__class_id_checker(args_list, len(args)) != 1:
 
-            instance_id = args[0] + "." + args[1]
+            instance_id = args_list[0] + "." + args_list[1]
             existing_instances = models.storage.all()
 
             if instance_id in existing_instances.keys():
@@ -105,9 +106,9 @@ class HBNBCommand(cmd.Cmd):
 
         if self.__class_id_checker(args_list, len(args)) == 1:
             pass
-        elif len(len(args)) == 2:
+        elif len(args) == 2:
             print("** attribute name missing **")
-        elif len(len(args)) == 3:
+        elif len(args) == 3:
             print("** value missing **")
         else:
             inst_id = args_list[0] + "." + args_list[1]
@@ -128,12 +129,12 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
 
-    def __class_id_checker(self, line_args, len_args):
+    def __class_id_checker(self, args_list, len_args):
         """ Checks if class name and id exist """
         if len_args == 0:
             print("** class name missing **")
             return 1
-        elif line_args[0] not in self.__classes:
+        elif args_list[0] not in self.__classes:
             print("** class doesn't exist **")
             return 1
         elif len_args == 1:
