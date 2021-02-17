@@ -2,7 +2,15 @@
 """Module for entry point
 of the command interpreter"""
 import cmd
+import models
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
 
 class HBNBCommand(cmd.Cmd):
     """Class HBNBCommand
@@ -48,12 +56,12 @@ class HBNBCommand(cmd.Cmd):
         based on the class name and id"""
         args = args.split()
 
-        if self.class_id_checker(args, len(args)) != 1:
+        if self.__class_id_checker(args, len(args)) != 1:
 
             instance_id = args[0] + "." + args[1]
             existing_instances = models.storage.all()
 
-            if instance_id in the_classes.keys():
+            if instance_id in existing_instances.keys():
                 print(existing_instances[instance_id])
             else:
                 print("** no instance found **")
@@ -62,7 +70,7 @@ class HBNBCommand(cmd.Cmd):
         """ Deletes an instance based on the class name and id """
         args = args.split()
 
-        if self.class_id_checker(args, len(args)) != 1:
+        if self.__class_id_checker(args, len(args)) != 1:
 
             instance_id = args[0] + "." + args[1]
             existing_instances = models.storage.all()
@@ -77,7 +85,7 @@ class HBNBCommand(cmd.Cmd):
         """ Prints all string representation of all instances
         based or not on the class name """
         args = args.split()
-        if args[0] == "" or args in self.__classes:
+        if args[0] == "" or args[0] in self.__classes:
             instances_id = models.storage.all()
             list_classes = []
 
@@ -87,7 +95,7 @@ class HBNBCommand(cmd.Cmd):
 
             print(list_classes)
         else:
-            print("** class name missing **")
+            print("** class  doesn't exist **")
 
     def do_update(self, args):
         """ Updates an instance based on the class name
@@ -122,12 +130,12 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
 
-    def __class_id_checker(self, args, len_args):
+    def __class_id_checker(self, line_args, len_args):
         """ Checks if class name and id exist """
         if len_args == 0:
             print("** class name missing **")
             return 1
-        elif args[0] not in self.__classes:
+        elif line_args[0] not in self.__classes:
             print("** class doesn't exist **")
             return 1
         elif len_args == 1:
