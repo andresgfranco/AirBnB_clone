@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Module for testing FileStorage class"""
 import unittest
+import pep8
 
-
-class TestFileStorage(unittest.Testcase):
+class TestFileStorage(unittest.TestCase):
     """Class for testing FileStorage class"""
     def test_pep8_conformance_base(self):
         pep8style = pep8.StyleGuide(quiet=True)
