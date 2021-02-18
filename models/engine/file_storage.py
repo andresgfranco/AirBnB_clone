@@ -40,7 +40,7 @@ class FileStorage():
                 json_rep = json.load(my_file)
                 for key, value in json_rep.items():
                     class_name = value["__class__"]
-                    obj = eval(class_name + '(**value)')
+                    obj = eval(class_name + "(**value)")
                     self.__objects[key] = obj
         except FileNotFoundError:
             pass
