@@ -56,7 +56,6 @@ class HBNBCommand(cmd.Cmd):
         """ Prints the string representation of an instance
         based on the class name and id"""
         args_list = args.split()
-
         if self.__class_id_checker(args_list, len(args_list)) != 1:
             instance_id = args_list[0] + "." + args_list[1]
             existing_instances = models.storage.all()
@@ -95,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
 
             print(list_classes)
         else:
-            print("** class  doesn't exist **")
+            print("** class doesn't exist **")
 
     def do_update(self, args):
         """ Updates an instance based on the class name
