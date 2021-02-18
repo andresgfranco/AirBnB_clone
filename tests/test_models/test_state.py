@@ -10,13 +10,13 @@ class TestState(unittest.TestCase):
     def test_pep8(self):
         """ Test pep8 style correct """
         style = pep8.StyleGuide(quiet=True)
-        result = style.check_files(['models/state.py'])
+        result = style.check_files(["models/state.py"])
         self.assertEqual(result.total_errors, 0)
 
     def test_pep8_test_state(self):
         """ Test pep8 style """
         pep8style = pep8.StyleGuide(quiet=True)
-        res = pep8style.check_files(['tests/test_models/test_state.py'])
+        res = pep8style.check_files(["tests/test_models/test_state.py"])
         self.assertEqual(res.total_errors, 0,
                          "Found code style errors (and warnings).")
 

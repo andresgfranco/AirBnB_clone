@@ -11,13 +11,13 @@ class TestReview(unittest.TestCase):
     def test_pep8(self):
         """ Test pep8 style correct """
         style = pep8.StyleGuide(quiet=True)
-        result = style.check_files(['models/review.py'])
+        result = style.check_files(["models/review.py"])
         self.assertEqual(result.total_errors, 0)
 
     def test_pep8_test_city(self):
         """ Test pep8 style """
         pep8style = pep8.StyleGuide(quiet=True)
-        res = pep8style.check_files(['tests/test_models/test_review.py'])
+        res = pep8style.check_files(["tests/test_models/test_review.py"])
         self.assertEqual(res.total_errors, 0,
                          "Found code style errors (and warnings).")
 
