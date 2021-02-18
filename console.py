@@ -46,16 +46,26 @@ class HBNBCommand(cmd.Cmd):
             "all": self.do_all,
             "show": self.do_show,
             "destroy": self.do_destroy,
-            "count": self.__count
+            "count": self.__count,
+            "update": self.do_update
             }
-        args = line.split(".")
-        class_name = args[0]
-        id_finder = args[1].split("(")
-        method = id_finder[0]
-        class_id = id_finder[1].replace(')', "").replace('"', "")
+        args = line.split(".") #User . all()
+        class_name = args[0] #User
+        args_finder = args[1].split("(") #all )
+        method = args_finder[0] #all
+        attr_finder = args_finder[1].replace(')', "").replace('"', "")
+        id_finder = attr_finder.split(", ")
+        class_id = id_finder[0]
+
         if class_name in self.__classes and method in cmd_methods:
             if method == "all" or method == "count":
                 cmd_methods[method](class_name)
+            elif method == "update":
+                attr_finder = attr_finder.split(", ")
+                attr_name = attr_finder[1]
+                attr_value = attr_finder[2]
+                cmd_methods[method]("{} {} {} {}".format(class_name,
+                    class_id, attr_name, attr_value))
             else:
                 cmd_methods[method]("{} {}".format(class_name, class_id))
         else:
