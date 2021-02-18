@@ -38,6 +38,30 @@ class HBNBCommand(cmd.Cmd):
         """ Prints new line when press enter """
         pass
 
+    def default(self, line):
+        """ Method called when an empty line is entered in 
+        response to the prompt. We have .all() .count() .show()
+        .destroy() included here """
+        cmd_methods = {
+            "all": self.do_all,
+            "show": self.do_show,
+            "destroy": self.do_destroy,
+            "count": self.__count
+            }
+        args = line.split(".")
+        class_name = args[0]
+        id_finder = args[1].split("(")
+        method = id_finder[0]
+        class_id = id_finder[1].replace(')', "").replace('"', "")
+        if class_name in self.__classes and method in cmd_methods:
+            if method == "all" or method == "count":
+                cmd_methods[method](class_name)
+            else:
+                cmd_methods[method]("{} {}".format(class_name, class_id))
+        else:
+            cmd.Cmd.default(self, line)
+
+
     def do_create(self, args):
         """ Creates a new instance of BaseModel, saves it
         (to the JSON file) and prints the id """
@@ -138,6 +162,21 @@ class HBNBCommand(cmd.Cmd):
         elif len_args == 1:
             print("** instance id missing **")
             return 1
+
+    def __count(self, args):
+        """Retrieve the number of instances of a class """
+        args_list = args.split()
+        if args_list[0] in self.__classes:
+            instances_id = models.storage.all()
+            number_instances = 0
+
+            for key, value in instances_id.items():
+                if args in key:
+                    number_instances += 1
+
+            print(number_instances)
+        else:
+            print("** class doesn't exist **")
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
