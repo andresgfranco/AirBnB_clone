@@ -18,7 +18,7 @@ class TestBaseModel(unittest.TestCase):
     def test_pep8_test_base_model(self):
         """Test that tests/test_models/test_base_model.py conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
-        res = pep8style.check_files(['tests/test_models/test_base_model.py'])
+        res = pep8style.check_files(["tests/test_models/test_base_model.py"])
         self.assertEqual(res.total_errors, 0,
                          "Found code style errors (and warnings).")
 
@@ -44,7 +44,7 @@ class TestBaseModel(unittest.TestCase):
         """Test that info is saved to file"""
         b3 = BaseModel()
         b3.save()
-        with open("file.json", 'r') as f:
+        with open("file.json", "r") as f:
             self.assertIn(b3.id, f.read())
 
     def test_regular_behavior(self):
@@ -76,9 +76,9 @@ class TestBaseModel(unittest.TestCase):
         expec_attr = ["id", "created_at", "updated_at",
                       "name", "number", "__class__"]
         self.assertCountEqual(mdict.keys(), expec_attr)
-        self.assertEqual(mdict['name'], "Holberton")
-        self.assertEqual(mdict['number'], 89)
-        self.assertEqual(mdict['__class__'], "BaseModel")
+        self.assertEqual(mdict["name"], "Holberton")
+        self.assertEqual(mdict["number"], 89)
+        self.assertEqual(mdict["__class__"], "BaseModel")
 
     def test_str_format(self):
         """ Test the string representation is correct """
