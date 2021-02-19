@@ -49,10 +49,10 @@ class HBNBCommand(cmd.Cmd):
             "count": self.__count,
             "update": self.do_update
             }
-        args = line.split(".") #User . all()
-        class_name = args[0] #User
-        args_finder = args[1].split("(") #all )
-        method = args_finder[0] #all
+        args = line.split(".")
+        class_name = args[0]
+        args_finder = args[1].split("(")
+        method = args_finder[0]
         attr_finder = args_finder[1].replace(')', "").replace('"', "")
         id_finder = attr_finder.split(", ")
         class_id = id_finder[0]
