@@ -5,7 +5,7 @@ footer {
   border-top: 1px solid;
   position:absolute;
   bottom:0
-}
-p {
-  text-align:center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
